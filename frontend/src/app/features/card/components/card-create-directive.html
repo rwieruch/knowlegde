@@ -1,0 +1,14 @@
+<form name="createCardForm" ng-submit="vm.createCard()">
+    <md-input-container>
+        <label>Front</label>
+        <input type="text" ng-model="vm.question" required>
+    </md-input-container>
+    <md-input-container>
+        <label>Back</label>
+        <input type="text" ng-model="vm.answer" required>
+    </md-input-container>
+
+    <md-button type="submit">
+      Create
+    </md-button>
+</form>
