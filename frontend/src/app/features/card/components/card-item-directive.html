@@ -1,5 +1,31 @@
 <div class="card-item">
-    <i class="fa fa-times remove-icon"></i>
-    <h3>{{vm.card.question}}</h3>
-    <p>{{vm.card.answer}}</p>
+
+    <div ng-if="!vm.isEdit">
+
+        <i class="fa fa-times remove-icon" ng-click="vm.removeCard()"></i>
+
+        <h3>{{vm.card.question}}</h3>
+        <p>{{vm.card.answer}}</p>
+
+        <div class="card-bottom-menu">
+            <i class="fa fa-pencil" ng-click="vm.toggleEdit()"></i>
+        </div>
+    </div>
+
+    <div ng-if="vm.isEdit">
+        <form name="cardForm">
+            <md-input-container>
+                <input ng-model="vm.card.question" required>
+            </md-input-container>
+            <md-input-container>
+                <input ng-model="vm.card.answer" required>
+            </md-input-container>
+        </form>
+
+        <div class="card-bottom-menu">
+            <i class="fa fa-check" ng-click="vm.saveEdit()"></i>
+            <i class="fa fa-remove" ng-click="vm.cancelEdit()"></i>
+        </div>
+    </div>
+
 </div>

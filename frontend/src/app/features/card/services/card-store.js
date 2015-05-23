@@ -12,7 +12,11 @@ function CardStore() {
         remove: 'remove'
     }
 
-    var itemsById = {};
+    // TODO init empty
+    var itemsById = {
+        1: { id: "1", question: "What is functional programming?", answer: "Foo" },
+        2: { id: "2", question: "What is a closure?", answer: "Bar" }
+    };
 
     this.add = add;
     this.update = update;
