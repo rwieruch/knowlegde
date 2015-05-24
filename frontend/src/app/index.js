@@ -4,11 +4,10 @@ angular.module('kd', [
         'ngResource',
         'ngRoute',
         'ngMaterial',
-        'kd.card'
+        'kd.card',
+        'kd.course'
     ])
     .config(function ($routeProvider) {
-        $routeProvider
-            .when('/', { redirectTo: '/card' })
-            .otherwise({ redirectTo: '/card' });
+        $routeProvider.otherwise({ redirectTo: '/card' });
     })
 ;
