@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('kd.card.CardStore', [
+angular.module('kd.deck.DeckStore', [
 
-]).service('CardStore', CardStore);
+]).service('DeckStore', DeckStore);
 
-function CardStore() {
+function DeckStore() {
 
     var EVENTS = {
         add: 'add',
@@ -14,9 +14,8 @@ function CardStore() {
 
     // TODO init empty
     var itemsById = {
-        1: { id: "1", deckId: "1", question: "What is functional programming?", answer: "Funktionale Programmierung ist ein Programmierparadigma, bei dem Programme ausschließlich aus Funktionen bestehen. Dadurch wird bewusst auf die aus der imperativen Programmierung bekannten Nebenwirkungen verzichtet." },
-        2: { id: "2", deckId: "1", question: "What is a closure?", answer: "JavaScript variables can belong to the local or global scope. Private variables can be made possible with closures." },
-        3: { id: "3", deckId: "2", question: "What is an apple pie?", answer: "It is a damn cake!" }
+        1: { id: "1", name: "Programming" },
+        2: { id: "2", name: "Cooking" }
     };
 
     this.add = add;
@@ -65,4 +64,4 @@ function CardStore() {
     }
 }
 
-CardStore.prototype = Object.create(new EventEmitter());
+DeckStore.prototype = Object.create(new EventEmitter());
