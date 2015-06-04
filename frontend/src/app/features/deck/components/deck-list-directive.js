@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('kd.deck.deckList', [
-    'kd.deck.DeckStore'
+    'kd.deck.DeckStore',
+    'kd.deck.deckItem'
 ]).directive('deckList', deckList);
 
 function deckList(DeckStore) {
