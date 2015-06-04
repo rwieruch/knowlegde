@@ -4,7 +4,7 @@ angular.module('kd.card.cardCreate', [
     'kd.card.CardCreateService'
 ]).directive('cardCreate', cardCreate);
 
-function cardCreate() {
+function cardCreate(CardCreateService) {
     return {
         restrict: 'E',
         templateUrl: 'app/features/card/components/card-create-directive.html',
@@ -14,7 +14,7 @@ function cardCreate() {
         bindToController: true
     };
 
-    function controllerFn($scope, CardCreateService) {
+    function controllerFn($scope) {
 
         var vm = this;
 
