@@ -4,7 +4,6 @@ require('./features/course/course-module');
 
 module.exports = angular.module('kd', [
     'ngResource',
-    'ngNewRouter',
     'ngRoute',
     'ngMaterial',
     'kd.deck',
