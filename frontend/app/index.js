@@ -4,6 +4,8 @@ require('./components/course/course-module');
 
 require('./route');
 
+var _ = require('lodash');
+
 module.exports = angular.module('kd', [
     'ngResource',
     'ngNewRouter',
