@@ -7,8 +7,8 @@
     "angular-animate": "^1.4",
     "angular-aria": "^1.4",
     "angular-material": "0.9.8",
+    "angular-new-router": "^0.5.3",
     "angular-resource": "~1.4",
-    "angular-route": "~1.4",
     "file-loader": "^0.8.4",
     "font-awesome": "~4.3.0",
     "wolfy87-eventemitter": "^4.2.11"

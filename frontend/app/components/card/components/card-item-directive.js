@@ -3,14 +3,14 @@
 require('./card-item-directive.less');
 
 module.exports = angular.module('kd.card.cardItem', [
-    require('features/card/services/card-remove-service').name,
-    require('features/card/services/card-edit-service').name
+    require('components/card/services/card-remove-service').name,
+    require('components/card/services/card-edit-service').name
 ]).directive('cardItem', cardItem);
 
 function cardItem(CardRemoveService, CardEditService) {
     return {
         restrict: 'E',
-        template: require('features/card/components/card-item-directive.html'),
+        template: require('components/card/components/card-item-directive.html'),
         scope: {
             card: '='
         },

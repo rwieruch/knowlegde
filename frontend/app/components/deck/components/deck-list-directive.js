@@ -3,14 +3,14 @@
 require('./deck-list-directive.less');
 
 module.exports = angular.module('kd.deck.deckList', [
-    require('features/deck/services/deck-store').name,
-    require('features/deck/components/deck-item-directive').name
+    require('components/deck/services/deck-store').name,
+    require('components/deck/components/deck-item-directive').name
 ]).directive('deckList', deckList);
 
 function deckList(DeckStore) {
     return {
         restrict: 'E',
-        template: require('features/deck/components/deck-list-directive.html'),
+        template: require('components/deck/components/deck-list-directive.html'),
         scope: { },
         controller: controllerFn,
         controllerAs: 'vm',

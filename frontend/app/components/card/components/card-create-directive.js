@@ -3,13 +3,13 @@
 require('./card-create-directive.less');
 
 module.exports = angular.module('kd.card.cardCreate', [
-    require('features/card/services/card-create-service').name
+    require('components/card/services/card-create-service').name
 ]).directive('cardCreate', cardCreate);
 
 function cardCreate(CardCreateService) {
     return {
         restrict: 'E',
-        template: require('features/card/components/card-create-directive.html'),
+        template: require('components/card/components/card-create-directive.html'),
         scope: { },
         controller: controllerFn,
         controllerAs: 'vm',

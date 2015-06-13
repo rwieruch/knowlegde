@@ -7,7 +7,7 @@ module.exports = function () {
 
     require('angular');
     require('angular-resource');
-    require('angular-route');
+    require('angular-new-router');
     require('angular-aria');
     require('angular-animate');
     require('angular-material');

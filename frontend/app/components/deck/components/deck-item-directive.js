@@ -1,13 +1,13 @@
 'use strict';
 
 module.exports = angular.module('kd.deck.deckItem', [
-    require('features/deck/components/deck-remove-directive').name
+    require('components/deck/components/deck-remove-directive').name
 ]).directive('deckItem', deckItem);
 
 function deckItem() {
     return {
         restrict: 'E',
-        template: require('features/deck/components/deck-item-directive.html'),
+        template: require('components/deck/components/deck-item-directive.html'),
         scope: {
             deck: '='
         },

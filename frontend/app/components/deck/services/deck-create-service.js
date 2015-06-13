@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = angular.module('kd.deck.DeckCreateService', [
-    require('features/deck/services/deck-store').name
+    require('components/deck/services/deck-store').name
 ]).service('DeckCreateService', DeckCreateService);
 
 function DeckCreateService(DeckStore) {

@@ -1,15 +1,15 @@
-require('./features/deck/deck-module');
-require('./features/card/card-module');
-require('./features/course/course-module');
+require('./components/deck/deck-module');
+require('./components/card/card-module');
+require('./components/course/course-module');
+
+require('./route');
 
 module.exports = angular.module('kd', [
     'ngResource',
-    'ngRoute',
+    'ngNewRouter',
     'ngMaterial',
     'kd.deck',
     'kd.card',
-    'kd.course'
-])
-.config(function ($routeProvider) {
-    $routeProvider.otherwise({ redirectTo: '/card' });
-});
+    'kd.course',
+    'kd.route'
+]);
