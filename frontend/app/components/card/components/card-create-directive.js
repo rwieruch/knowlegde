@@ -10,20 +10,21 @@ function cardCreate(CardCreateService) {
     return {
         restrict: 'E',
         template: require('components/card/components/card-create-directive.html'),
-        scope: { },
+        scope: {
+            deckId: '='
+        },
         controller: controllerFn,
         controllerAs: 'vm',
         bindToController: true
     };
 
     function controllerFn($scope) {
-
         var vm = this;
 
         vm.createCard = createCard;
 
         function createCard() {
-            CardCreateService.createCard(vm.question, vm.answer);
+            CardCreateService.createCard(vm.deckId, vm.question, vm.answer);
             clean();
         }
 

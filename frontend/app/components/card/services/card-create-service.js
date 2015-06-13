@@ -8,8 +8,10 @@ function CardCreateService(CardStore) {
 
     this.createCard = createCard;
 
-    function createCard(question, answer) {
+    function createCard(deckId, question, answer) {
+
         var card = {
+            deckId: deckId,
             id: Math.random(),
             question: question,
             answer: answer
