@@ -1,4 +1,4 @@
 <div>
     <deck-remove deck="vm.deck"></deck-remove>
-    {{ vm.deck.name }}
+    <a ng-link="deck({id:vm.deck.id})">{{ vm.deck.name }}</a>
 </div>

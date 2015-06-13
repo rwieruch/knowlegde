@@ -18,7 +18,5 @@ function deckItem() {
 
     function controllerFn($scope) {
 
-        var vm = this;
-
     }
 }
