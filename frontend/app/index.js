@@ -1,3 +1,4 @@
+require('./components/common/common-module');
 require('./components/deck/deck-module');
 require('./components/card/card-module');
 require('./components/course/course-module');
@@ -10,6 +11,7 @@ module.exports = angular.module('kd', [
     'ngResource',
     'ngNewRouter',
     'ngMaterial',
+    'kd.common',
     'kd.deck',
     'kd.card',
     'kd.course',
