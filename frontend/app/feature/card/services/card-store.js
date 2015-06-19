@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = angular.module('kd.card.CardStore', [
-    require('components/common/store-factory').name
+    require('common/store-factory').name
 ]).service('CardStore', CardStore);
 
 function CardStore(StoreFactory) {

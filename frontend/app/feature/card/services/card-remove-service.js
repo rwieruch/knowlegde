@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = angular.module('kd.card.CardRemoveService', [
-    require('components/card/services/card-store').name
+    require('feature/card/services/card-store').name
 ]).service('CardRemoveService', CardRemoveService);
 
 function CardRemoveService(CardStore) {

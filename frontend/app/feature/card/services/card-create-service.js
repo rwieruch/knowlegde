@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = angular.module('kd.card.CardCreateService', [
-    require('components/card/services/card-store').name
+    require('feature/card/services/card-store').name
 ]).service('CardCreateService', CardCreateService);
 
 function CardCreateService(CardStore) {

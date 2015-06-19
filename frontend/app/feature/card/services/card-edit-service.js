@@ -1,5 +1,5 @@
 module.exports = angular.module('kd.card.CardEditService', [
-    require('components/card/services/card-store').name
+    require('feature/card/services/card-store').name
 ]).service('CardEditService', CardEditService);
 
 function CardEditService(CardStore) {

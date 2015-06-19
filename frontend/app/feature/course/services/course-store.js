@@ -1,5 +1,5 @@
 module.exports = angular.module('kd.course.CourseStore', [
-    require('components/common/store-factory').name
+    require('common/store-factory').name
 ]).service('CourseStore', CourseStore);
 
 function CourseStore(StoreFactory) {

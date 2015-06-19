@@ -1,5 +1,7 @@
 module.exports = angular.module('kd.route', [
-
+    require('components/card/CardController').name,
+    require('components/deck/DeckController').name,
+    require('components/course/CourseController').name
 ]).controller('RouteController', RouteController);
 
 function RouteController($router) {

@@ -3,13 +3,13 @@
 require('./deck-remove-directive.less');
 
 module.exports = angular.module('kd.deck.deckRemove', [
-    require('components/deck/services/deck-remove-service').name
+    require('feature/deck/services/deck-remove-service').name
 ]).directive('deckRemove', deckRemove);
 
 function deckRemove(DeckRemoveService) {
     return {
         restrict: 'E',
-        template: require('components/deck/components/deck-remove-directive.html'),
+        template: require('feature/deck/components/deck-remove-directive.html'),
         scope: {
             deck: '='
         },

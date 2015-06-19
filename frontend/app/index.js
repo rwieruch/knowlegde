@@ -1,7 +1,7 @@
-require('./components/common/common-module');
-require('./components/deck/deck-module');
-require('./components/card/card-module');
-require('./components/course/course-module');
+require('./common/common-module');
+require('./feature/deck/deck-module');
+require('./feature/card/card-module');
+require('./feature/course/course-module');
 
 require('./route');
 

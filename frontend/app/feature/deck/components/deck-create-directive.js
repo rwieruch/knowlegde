@@ -1,13 +1,13 @@
 'use strict';
 
 module.exports = angular.module('kd.deck.deckCreate', [
-    require('components/deck/services/deck-create-service').name
+    require('feature/deck/services/deck-create-service').name
 ]).directive('deckCreate', deckCreate);
 
 function deckCreate(DeckCreateService) {
     return {
         restrict: 'E',
-        template: require('components/deck/components/deck-create-directive.html'),
+        template: require('feature/deck/components/deck-create-directive.html'),
         scope: { },
         controller: controllerFn,
         controllerAs: 'vm',

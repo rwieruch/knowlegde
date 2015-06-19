@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = angular.module('kd.course.CourseController', [
-    require('components/course/services/course-store').name,
-    require('components/card/components/card-list-directive').name
+    require('feature/course/services/course-store').name,
+    require('feature/card/components/card-list-directive').name
 ]).controller('CourseController', CourseController);
 
 function CourseController($routeParams, CourseStore) {
