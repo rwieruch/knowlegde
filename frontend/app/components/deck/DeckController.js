@@ -9,6 +9,6 @@ module.exports = angular.module('kd.deck.DeckController', [
     require('components/card/components/card-list-directive').name
 ]).controller('DeckController', DeckController);
 
-function DeckController($routeParams, CardStore) {
+function DeckController($routeParams) {
     this.deckId = $routeParams.id;
 }

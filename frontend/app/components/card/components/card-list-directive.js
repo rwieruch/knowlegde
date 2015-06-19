@@ -32,6 +32,7 @@ function cardList(CardStore) {
         init();
 
         function init() {
+            console.log(vm.deckId);
             vm.cards = _.filter(CardStore.getAll(), function (card) {
                 return card.deckId === vm.deckId;
             });

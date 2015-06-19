@@ -8,7 +8,8 @@ function RouteController($router) {
         { path: '/', redirectTo: '/deck' },
         { path: '/deck', component: 'deck' },
         { path: '/deck/:id', component: 'deck' },
-        { path: '/course', component: 'course' }
+        { path: '/course', component: 'course' },
+        { path: '/course/:id', component: 'course' }
     ]);
 
 }
