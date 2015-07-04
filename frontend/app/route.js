@@ -13,7 +13,7 @@ function RouteController($router) {
         { path: '/deck', component: 'deck' },
         { path: '/deck/:id', component: 'deck' },
         { path: '/course', component: 'course-overview' },
-        { path: '/course/:id', component: 'coure' }
+        { path: '/course/:id', component: 'course' }
     ]);
 
 }
