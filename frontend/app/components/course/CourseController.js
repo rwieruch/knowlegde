@@ -15,5 +15,7 @@ function CourseController($routeParams, CourseStore) {
         return course.id === self.courseId;
     });
 
+    console.log(course);
+
     this.deckId = course[0].deckId;
 }
