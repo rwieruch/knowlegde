@@ -1,0 +1,24 @@
+<md-card class="course-progress">
+    <div class="course-header">
+        <div>
+            {{ vm.deck.name }}
+        </div>
+        <div>
+            {{ vm.courseCards.length + 1 }}/{{ vm.overallCardCount }}
+        </div>
+    </div>
+    <div class="course-content">
+        {{ !vm.isFlipped ? vm.currentCard.question : vm.currentCard.answer }}
+    </div>
+    <div class="course-footer">
+        <div>
+            <a ng-click="vm.flipCard()">Flip to {{ !vm.isFlipped ? 'answer' : 'question' }}</a>
+        </div>
+        <div class="dunno">
+            <a ng-click="vm.nextCard(false)">{{ !vm.isFlipped ? 'I dunno' : 'Try again later' }}</a>
+        </div>
+        <div class="remember">
+            <a ng-click="vm.nextCard(true)">I remember</a>
+        </div>
+    </div>
+</md-card>
