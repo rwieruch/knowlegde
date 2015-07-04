@@ -15,10 +15,10 @@
             <a ng-click="vm.flipCard()">Flip to {{ !vm.isFlipped ? 'answer' : 'question' }}</a>
         </div>
         <div class="dunno">
-            <a ng-click="vm.nextCard(false)">{{ !vm.isFlipped ? 'I dunno' : 'Try again later' }}</a>
+            <a ng-click="vm.nextCard(false)"><i class="fa fa-times"></i> {{ !vm.isFlipped ? 'I dunno' : 'Try again later' }}</a>
         </div>
         <div class="remember">
-            <a ng-click="vm.nextCard(true)">I remember</a>
+            <a ng-click="vm.nextCard(true)"><i class="fa fa-check"></i> I remember</a>
         </div>
     </div>
 </md-card>
