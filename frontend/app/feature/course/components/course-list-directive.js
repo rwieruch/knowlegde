@@ -1,10 +1,11 @@
 'use strict';
 
 module.exports = angular.module('kd.course.courseListDirective', [
-    require('feature/course/services/course-store').name
+    require('feature/course/services/course-store').name,
+    require('feature/deck/services/deck-store').name
 ]).directive('courseList', courseList);
 
-function courseList(CourseStore) {
+function courseList(CourseStore, DeckStore) {
     return {
         restrict: 'E',
         template: require('./course-list-directive.html'),
@@ -27,7 +28,23 @@ function courseList(CourseStore) {
         init();
 
         function init() {
-            vm.courses = CourseStore.getAll();
+            var courses = CourseStore.getAll();
+            var deckIds = _.pluck(courses, 'deckId');
+            var decks = DeckStore.getByIds(deckIds);
+
+            vm.extendedCourses = _.map(courses, extendCourseWithDeck(decks));
+        }
+
+        function extendCourseWithDeck(decks) {
+            return function (course) {
+                return _.assign({}, course, _.find(decks, getDeckByDeckId(course)));
+            }
+        }
+
+        function getDeckByDeckId(course) {
+            return function (deck) {
+                return deck.id === course.deckId;
+            }
         }
 
     }

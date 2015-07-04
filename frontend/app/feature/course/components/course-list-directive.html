@@ -1,1 +1,6 @@
-course-list-directive.html
+<div class="course-list">
+    <div ng-repeat="extendedCourse in vm.extendedCourses">
+        {{ extendedCourse.name }}
+        {{ extendedCourse.strength }}
+    </div>
+</div>

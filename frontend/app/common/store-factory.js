@@ -23,6 +23,8 @@ function StoreFactory() {
         this.update = update;
         this.remove = remove;
         this.getAll = getAll;
+        this.getByIds = getByIds;
+        this.getById = getById;
 
         var self = this;
 
@@ -46,6 +48,14 @@ function StoreFactory() {
             return Object.keys(itemsById).map(function (key) {
                 return itemsById[key];
             });
+        }
+
+        function getByIds(ids) {
+            return _.map(ids, getById);
+        }
+
+        function getById(id) {
+            return itemsById[id];
         }
 
         function addOrUpdateItem(item) {
