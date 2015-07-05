@@ -4,6 +4,7 @@ module.exports = angular.module('kd.course.courseProgressDirective', [
     require('feature/course/services/course-store').name,
     require('feature/deck/services/deck-store').name,
     require('feature/card/services/card-store').name,
+    require('common/progress-bar-directive').name
 ]).directive('courseProgress', courseProgress);
 
 function courseProgress(CourseStore, DeckStore, CardStore) {
@@ -29,10 +30,13 @@ function courseProgress(CourseStore, DeckStore, CardStore) {
         function init() {
             var course = CourseStore.getById(vm.courseId);
             var cards = CardStore.getByDeckId(course.deckId);
+
             vm.deck = DeckStore.getById(course.deckId);
             vm.courseCards = cards.slice();
-            vm.overallCardCount = cards.length;
             vm.currentCard = vm.courseCards.pop();
+
+            vm.overallCardCount = cards.length;
+            vm.courseCardsDoneLength = 0;
         }
 
         function flipCard() {
@@ -42,6 +46,12 @@ function courseProgress(CourseStore, DeckStore, CardStore) {
         function nextCard() {
             vm.isFlipped = false;
             vm.currentCard = vm.courseCards.pop();
+
+            computeProgress();
+        }
+
+        function computeProgress() {
+            vm.courseCardsDoneLength++;
         }
     }
 }
