@@ -1,4 +1,7 @@
 <div class="progress-bar">
-    <div class="value"></div>
-    <div class="max-value"></div>
+<!--     <div class="value"></div>
+    <div class="max-value"></div> -->
+    <div
+        ng-repeat="progress in vm.courseProgress"
+        ng-class="{ 'not-yet': progress.remember === null, 'remember': progress.remember, 'dunno': progress.remember === false }"></div>
 </div>

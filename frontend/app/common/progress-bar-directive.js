@@ -9,8 +9,7 @@ function progressBar($document) {
         restrict: 'E',
         template: require('./progress-bar-directive.html'),
         scope: {
-            value: '=',
-            maxValue: '='
+            courseProgress: '='
         },
         controller: controllerFn,
         controllerAs: 'vm',
@@ -21,15 +20,10 @@ function progressBar($document) {
 
         var vm = this;
 
-        $scope.$watch('vm.value', init);
-        $scope.$watch('vm.maxValue', init);
+        $scope.$watchCollection('vm.courseProgress', init);
 
         function init() {
-            var progressDone = vm.value * 100 / vm.maxValue;
-            var progressLeft = 100 - progressDone;
-
-            angular.element($document[0].querySelector('.value')).css('width', progressDone + '%');
-            angular.element($document[0].querySelector('.max-value')).css('width', progressLeft + '%');
+            console.log(vm.courseProgress);
         }
     }
 }

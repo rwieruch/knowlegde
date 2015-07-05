@@ -37,21 +37,33 @@ function courseProgress(CourseStore, DeckStore, CardStore) {
 
             vm.overallCardCount = cards.length;
             vm.courseCardsDoneLength = 0;
+
+            prepareCourseProgress(cards);
         }
 
         function flipCard() {
             vm.isFlipped = !vm.isFlipped;
         }
 
-        function nextCard() {
+        function nextCard(remember) {
+            updateCourseProgress(vm.currentCard, remember);
+
             vm.isFlipped = false;
             vm.currentCard = vm.courseCards.pop();
-
-            computeProgress();
         }
 
-        function computeProgress() {
-            vm.courseCardsDoneLength++;
+        function prepareCourseProgress(cards) {
+            vm.courseProgress = [];
+            _.forEachRight(cards, function (card) {
+                return vm.courseProgress.push({ id: card.id, remember: null });
+            });
+        }
+
+        function updateCourseProgress(card, remember) {
+            var progress = _.find(vm.courseProgress, function (progress) {
+                return progress.id === card.id;
+            })
+            progress.remember = remember;
         }
     }
 }

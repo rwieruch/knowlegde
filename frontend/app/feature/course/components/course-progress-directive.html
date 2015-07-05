@@ -1,5 +1,5 @@
 <md-card class="course-progress">
-    <progress-bar value="vm.courseCardsDoneLength" max-value="vm.overallCardCount"></progress-bar>
+    <progress-bar course-progress="vm.courseProgress"></progress-bar>
     <div class="course-content">
         <div>{{ vm.deck.name }}</div>
         <div>{{ !vm.isFlipped ? vm.currentCard.question : vm.currentCard.answer }}</div>
